@@ -10,10 +10,17 @@ labels = []
 
 while True:
     ret, frame = video.read()
+    #Testing ret
+    if not ret:
+        print("Can't receive frame (stream end?). Exiting ...")
+        break
+
     bbox, label, conf = cv.detect_common_objects(frame)
     output_image = draw_bbox(frame, bbox, label, conf)
 
-    cv2.imshow("object detection", frame)
+    cv2.imshow("object_detection", output_image)
+
+   
 
     for item in label:
         if item in labels:
@@ -26,6 +33,3 @@ while True:
     
 print(labels)
 
-# vid.realease()
-
-# cv2.destroyAllWindows()

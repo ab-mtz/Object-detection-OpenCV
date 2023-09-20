@@ -30,7 +30,7 @@ def object_detection_with_bounding_boxes(filename, model="yolov3", confidence=0.
     cv2.imwrite(f'images_with_boxes/{filename}', output_image)
      
     # Display the image with bounding boxes
-    display(Image(f'images_with_boxes/{filename}'))
+    # display(Image(f'images_with_boxes/{filename}'))
 
 if __name__ == '__main__':
     main()
